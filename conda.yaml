@@ -1,22 +1,22 @@
 name: dinov2
 channels:
-  - defaults
   - pytorch
   - nvidia
   - xformers
   - conda-forge
+  - defaults
 dependencies:
   - python=3.9
-  - pytorch::pytorch=2.0.0
-  - pytorch::pytorch-cuda=11.7.0
-  - pytorch::torchvision=0.15.0
+  - pytorch=2.1.0
+  - pytorch-cuda=12.1
+  - torchvision=0.16.0
   - omegaconf
   - torchmetrics=0.10.3
   - fvcore
   - iopath
-  - xformers::xformers=0.0.18
+  - xformers>=0.0.22  # This version is key for CUDA 12.1
   - pip
   - pip:
-    - git+https://github.com/facebookincubator/submitit
-    - --extra-index-url https://pypi.nvidia.com
-    - cuml-cu11
+      - git+https://github.com/facebookincubator/submitit
+      - --extra-index-url https://pypi.nvidia.com
+      - cuml-cu12
